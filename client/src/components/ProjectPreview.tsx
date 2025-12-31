@@ -1,7 +1,8 @@
-import React, {
+import {
   forwardRef,
   useEffect,
   useImperativeHandle,
+  useRef,
   useState,
 } from "react";
 import type { Project } from "../types";
@@ -25,7 +26,7 @@ const ProjectPreview = forwardRef<ProjectPreviewRef, ProjectPreviewProps>(
     { project, isGenerating, device = "desktop", showEditorPanel = true },
     ref
   ) => {
-    const iframeRef = React.useRef<HTMLIFrameElement>(null);
+    const iframeRef = useRef<HTMLIFrameElement>(null);
 
     const [selectedElement, setSelectedElement] = useState<any>(null);
 

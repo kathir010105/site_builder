@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Message, Project, Version } from '../types';
 import { BotIcon, EyeIcon, Link, Loader2Icon, SendIcon, UserIcon } from 'lucide-react';
 import api from '@/configs/axios';

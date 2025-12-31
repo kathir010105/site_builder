@@ -1,9 +1,9 @@
-import React from 'react'
 import { appPlans } from '../assets/assets';
 import Footer from '../components/Footer';
 import { authClient } from '@/lib/auth-client';
 import { toast } from 'sonner';
 import api from '@/configs/axios';
+import { useState } from 'react';
 
 
 
@@ -18,7 +18,7 @@ interface Plan{
 
 const Pricing = () => {
   const{data:session}=authClient.useSession()
-  const [plans]=React.useState<Plan[]>(appPlans)
+  const [plans]=useState<Plan[]>(appPlans)
 
   const handlePurchase = async (planId:string) => {
     try {
