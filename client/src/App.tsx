@@ -8,7 +8,10 @@ import Community from "./pages/Community";
 import View from "./pages/View";
 import NavBar from "./components/Navbar";
 import MyProject from "./pages/MyProject";
-
+import { Toaster} from 'sonner'
+import AuthPage from "./pages/auth/AuthPage";
+import Settings from "./pages/Settings";
+import Loading from "./pages/Loading";
 
 
 const App = () => {
@@ -17,6 +20,7 @@ const App = () => {
   const hideNavbar=pathname.startsWith('/projects/') && pathname !=='/projects' || pathname.startsWith('/view/') || pathname.startsWith('/preview/')
   return (
     <div>
+      <Toaster/>
       {!hideNavbar && <NavBar/>}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,6 +31,9 @@ const App = () => {
         <Route path="/preview/:projectId/:versionId" element={<Preview/>}/>
         <Route path="/community" element={<Community/>}/>
         <Route path="/view/:projectId" element={<View/>}/>
+        <Route path="/auth/:pathname" element={<AuthPage />} />
+        <Route path="/account/settings" element={<Settings />} />
+        <Route path="/loading" element={<Loading />} />
       </Routes>
     </div>
   );
